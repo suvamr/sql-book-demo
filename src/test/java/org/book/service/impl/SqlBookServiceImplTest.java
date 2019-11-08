@@ -19,9 +19,9 @@ import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-//@RunWith(PowerMockRunner.class)
-//@PowerMockIgnore({"javax.management.*"})
-//@PrepareForTest({SqlBookServiceImpl.class})
+@RunWith(PowerMockRunner.class)
+@PowerMockIgnore({"javax.management.*"})
+@PrepareForTest({SqlBookServiceImpl.class})
 public class SqlBookServiceImplTest {
 	@Mock
 	private SqlBookRepository sqlBookRepository;
@@ -33,14 +33,12 @@ public class SqlBookServiceImplTest {
 	public ExpectedException expectedException = ExpectedException.none();
 
 	@Before
-	public void setUp() throws Exception {
-	}
+	public void setUp() throws Exception {}
 
 	@After
-	public void tearDown() throws Exception {
-	}
+	public void tearDown() throws Exception {}
 
-//	@Test
+	@Test
 	public void testFindByTitle() {
 		String title = "xyz";
 		SqlBook book = new SqlBook();
